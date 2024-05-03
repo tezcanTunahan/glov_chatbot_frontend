@@ -9,17 +9,24 @@ type Messages = {
 const useChat = () => {
   const [messages, setMessages] = useState<Messages[]>([]);
   const [message, setMessage] = useState<string>('');
+  const [loading, setLoading] = useState<boolean>(false);
 
   const sendMessage = async () => {
     if (!message) return;
-
+    setLoading(true);
+    setMessages((prevMessages) => [...prevMessages, { role: 'user', content: message }]);
     const res = await sendMessageService(messages, message);
-    console.log(res.data.message);
+    setMessages((prevMessages) => [...prevMessages, { role: 'assistant', content: res.data.message }]);
+    setMessage('');
+    setLoading(false);
+  };
 
-    setMessages((prevMessages) => [...prevMessages, { role: 'user', content: message }, { role: 'assistant', content: res.data.message }]);
+  const resetChat = () => {
+    console.log('reset chat');
+    setMessages([]);
     setMessage('');
   };
-  return { messages, message, setMessage, sendMessage };
+  return { messages, message, setMessage, sendMessage, loading, resetChat };
 };
 
 export default useChat;

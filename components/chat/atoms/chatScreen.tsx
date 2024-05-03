@@ -22,7 +22,7 @@ export default function ChatScreen({ messages }: Props) {
     );
 
   return (
-    <div className=' bg-costum-gray text-white w-full h-[65vh] py-10 px-5 overflow-y-auto scrollbar-thin scrollbar-thumb-gray-900 scrollbar-track-gray-300'>
+    <div className='relative bg-costum-gray text-white w-full h-[65vh] py-10 px-5 overflow-y-auto scrollbar-thin scrollbar-thumb-gray-900 scrollbar-track-gray-300'>
       {displayElement}
     </div>
   );

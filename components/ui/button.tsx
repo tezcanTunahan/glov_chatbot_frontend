@@ -5,13 +5,14 @@ type Props = {
   children: React.ReactNode;
   className?: string;
   onClick?: () => void;
-  variant?: 'primary' | 'secondary' | 'ghost';
+  variant?: 'primary' | 'secondary' | 'ghost' | 'danger';
 };
 
 const buttonVariants = {
   primary: 'bg-blue-500 text-white',
   secondary: 'bg-gray-500 text-white',
   ghost: 'bg-transparent ',
+  danger: 'bg-red-500 text-white',
 };
 
 export default function Button({ children, className, onClick, variant = 'primary' }: Props) {

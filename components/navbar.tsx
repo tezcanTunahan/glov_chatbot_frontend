@@ -10,7 +10,7 @@ export default function Navbar() {
       <div>
         <p className='text-xl'>
           Created by{' '}
-          <Link href='www.tunahantezcan.com' className='text-orange-500 hover:text-orange-700 font-semibold'>
+          <Link href='https://www.tunahantezcan.com' className='text-orange-500 hover:text-orange-700 font-semibold'>
             tunahan tezcan
           </Link>
         </p>
